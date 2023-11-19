@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="{% static 'css/movies_list.css' %}">
+</head>
+<body>
+    <div class="movie-details-container">
+        <img src="{{moviess.poster.url}}" alt="{{moviess.moviename}}" width="250" height="250">
+<div class="movie-details">
+    <h1>{{ moviess.moviename }}</h1>
+    <h1> {{ moviess.direcname}}</h1>
+  
+<p>Language: {{ moviess.language  }}</p>
+<p>Year: {{moviess.year  }}</p>
+<p>Rating: {{moviess.rating  }}</p>
+</div>
+
+
+<p class="back">Back to <a href="/" >MOVIES</a></p>
+    </div>
+</body>
+</html>

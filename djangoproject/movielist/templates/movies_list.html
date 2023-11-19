@@ -1,0 +1,47 @@
+<!-- movies_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+    <link rel="stylesheet" href="{% static 'css/movies_list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie List</h1>
+        <div class="first">
+            
+        <div class="movie-details-container">
+        <p><a href="add/" class="button">Add Movie</a><a href="update/">Update Movie</a><a href="delete/">Delete Movie</a><p>
+            
+        </div>
+           
+        </div>
+        <form method="get" action="{% url 'movieslist' %}">
+            {{ form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+        
+        <div class="movies">
+            {% for movie in movies %}
+                <div class="movie-card">
+                    <img src="{{ movie.poster.url }}" alt="{{ movie.moviename }} Poster" width="300" height="200">
+                    <a href="details/{{movie.id}}">   <h2>{{ movie.moviename }}</h2>
+                    <p>{{ movie.direcname }}</p>
+                    <p>Release Year: {{ movie.year }}</p>
+                   
+                </a>
+                </div>
+            {% endfor %}
+        </div>
+        <h2>Movies by Language</h2>
+<ul>
+    {% for language_count in language_counts %}
+        <li>{{ language_count.language }}: {{ language_count.count }}</li>
+    {% endfor %}
+</ul>
+    </div>
+</body>
+</html>

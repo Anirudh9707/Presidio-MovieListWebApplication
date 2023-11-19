@@ -1,0 +1,15 @@
+<!-- update_movie.html -->
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/movies_list.css' %}">
+    </head>
+    <div class="movie-card">
+<h2>Update Movie Details</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+</div>
+</html>

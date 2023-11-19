@@ -1,0 +1,15 @@
+<!-- add_movie.html -->
+{% load static %}
+<html>
+    <head>
+    <link rel="stylesheet" href="{% static 'css/movies_list.css' %}">
+</head>
+<div class="movie-card">
+<h2>Add a Movie</h2>
+<form method="post" action="{% url 'addmovie' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Movie</button>
+</form>
+</div>
+</html>
