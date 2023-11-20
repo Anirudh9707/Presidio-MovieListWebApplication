@@ -1,7 +1,7 @@
 This is a movie list displaying application.
 website link:
 https://anirudhskumar9707.pythonanywhere.com
-https://anirudhskumar9707.pythonanywhere.com/admin username :anirudh password:1234
+
 
 END-USER FEATURES
 Home Page: Provide a user-friendly landing page with options:
